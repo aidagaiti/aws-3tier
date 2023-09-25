@@ -5,7 +5,6 @@ resource "aws_lb" "external-alb" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.secgroups.id]
   subnets            = [aws_subnet.public1.id ,aws_subnet.public2.id , aws_subnet.public3.id ]
-  enable_deletion_protection = true
 }
 
 # create load balancer target group

@@ -6,7 +6,6 @@ resource "aws_launch_template" "my_launch_template" {
   instance_type = "t2.micro"
   key_name      = aws_key_pair.forproject.id
   network_interfaces {
-    subnet_id       = aws_subnet.public1.id
     associate_public_ip_address = true
     security_groups             = [aws_security_group.secgroups.id]
   }

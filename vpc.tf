@@ -141,7 +141,7 @@ resource "aws_route_table" "pr_subnet_route" {
   vpc_id = aws_vpc.project-vpc.id
   route {
     cidr_block = "0.0.0.0/0"
-  nat_gateway_id = aws_nat_gateway.NGW.id
+  gateway_id = aws_nat_gateway.NGW.id
   }
   
   tags ={

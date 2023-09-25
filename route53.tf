@@ -1,7 +1,12 @@
 resource "aws_route53_record" "wordpress" {
-  zone_id = var.hosted-zone-id
+  zone_id = "Z0680016PA4LTHI66LBC"
   name    = "wordpress.${var.domain-name}"
   type    = "CNAME"
-  ttl = "300"
-  records = [aws_lb.external-alb.dns_name]
+ 
+
+ alias {
+    name                   = "${aws_lb.external-alb.dns_name}"
+    zone_id                = "${aws_lb.external-alb.zone_id}"
+    evaluate_target_health = true
+  }
 }
